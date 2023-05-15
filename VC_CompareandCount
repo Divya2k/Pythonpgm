@@ -1,0 +1,44 @@
+def compareVowel(word1):
+    res=[]
+    vcount=0
+    for ele in range(len(word1)):
+        if word1[ele] in vowels:
+            vcount+=1
+            res.append(ele)
+    print("Number of vowels present in string",vcount)
+    print("Position of vowels in string",res)
+def compareConsonant(word1):
+    res=[]
+    ccount=0
+    for ele in range(len(word1)):
+        if word1[ele] in consonants:
+            ccount+=1
+            res.append(ele)
+    print("Number of consonants present in string",ccount)
+    print("Position of consonants in string",res)
+        
+vowels = ['a', 'e', 'i', 'o', 'u']
+consonants = "bcdfghjklmnpqrstvwxyz"
+n=int(input('Enter the number of strings to compare'))
+if n<=5:
+    for j in range(n):
+        str1 = input("Enter the string: ").lower()
+        if len(str1)>=2 & len(str1)<=5:
+            choice = input("Do you want to compare vowels or consonants ").lower()
+            if choice=="vowel":
+                compareVowel(str1)
+            elif choice=="consonant":
+                compareConsonant(str1)
+        elif len(str1)>5:
+            print('Please enter a smaller string')
+        else:
+            print('You have entered a invalid option')
+            n1=input('Do you wish to exit?')
+            if n1=='Y'or 'y':
+                exit()
+            else:
+                pass
+else:
+    exit()
+
+
